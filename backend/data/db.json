@@ -1,0 +1,263 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ann-Sophie",
+      "password": "red1"
+    },
+    {
+      "id": 2,
+      "name": "Annika",
+      "password": "red2"
+    },
+    {
+      "id": 3,
+      "name": "Terese",
+      "password": "red3"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Klassisk Svart Hatt",
+      "price": 149,
+      "image": "https://img.freepik.com/free-vector/black-top-hat-isolated_1284-43034.jpg?size=626&ext=jpg&ga=GA1.2.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "svart",
+        "klassisk"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Rosa baseballkeps",
+      "price": 79,
+      "image": "https://img.freepik.com/free-photo/blue-clothing-merchandise-cotton-blank_1203-5370.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "keps",
+        "rosa",
+        "baseball"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Lila Bomullshatt",
+      "price": 99,
+      "image": "https://img.freepik.com/free-photo/pretty-blue-hat_1203-1944.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "lila",
+        "bomull"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Grön Camouflagekeps",
+      "price": 89,
+      "image": "https://www.freepik.com/free-psd/military-cap-mockup_2100631.htm#query=camo%20cap&position=0&from_view=search&track=ais",
+      "tags": [
+        "keps",
+        "grön",
+        "camouflage"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Blå Solhatt",
+      "price": 99,
+      "image": "https://img.freepik.com/free-photo/great-blue-hat_1203-1941.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=sph",
+      "tags": [
+        "hatt",
+        "blå",
+        "sol"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Ljusgrå Filthat",
+      "price": 199,
+      "image": "https://img.freepik.com/free-photo/female-beauty-brown-cap-summer_1203-6317.jpg?size=626&ext=jpg&ga=GA1.2.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "svart",
+        "filthatt"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Stråhatt med stort brätte",
+      "price": 149,
+      "image": "https://img.freepik.com/free-photo/beach-object-head-brown-top_1203-5406.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "strå",
+        "sol"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Ljusgrön Baseballkeps",
+      "price": 79,
+      "image": "https://img.freepik.com/free-photo/black-sport-visor-cotton-object_1203-5372.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "keps",
+        "grön",
+        "baseball"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Vit Sommarhatt",
+      "price": 129,
+      "image": "https://img.freepik.com/free-photo/sun-vintage-accessory-beautiful-cap_1203-5407.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "vit",
+        "sommar"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Svart Skinnkeps",
+      "price": 199,
+      "image": "https://img.freepik.com/free-psd/black-baseball-cap-mockup_1310-827.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "keps",
+        "svart",
+        "skinn"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Brun Cowboyhatt",
+      "price": 179,
+      "image": "https://img.freepik.com/free-photo/classic-tan-felt-hat_1101-770.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "brun",
+        "cowboy"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Lila Baseballkeps",
+      "price": 79,
+      "image": "https://img.freepik.com/free-photo/empty-purple-baseball-green-white_1203-5374.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "keps",
+        "lila",
+        "baseball"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Grafitgrå Hatt",
+      "price": 139,
+      "image": "https://img.freepik.com/free-photo/fashion-beauty-sun-wear-clothing_1203-6316.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "grå",
+        "grafit"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Turkos Bomullshatt",
+      "price": 99,
+      "image": "https://img.freepik.com/free-photo/stylish-hat_1203-1943.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "turkos",
+        "bomull"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Svart Träningskeps",
+      "price": 79,
+      "image": "https://img.freepik.com/free-photo/black-cap-front-view-isolated_125540-1019.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "keps",
+        "svart",
+        "träning"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Vit Träningkeps",
+      "price": 79,
+      "image": "https://img.freepik.com/free-photo/simple-white-pink-cap-headwear-accessory_53876-101506.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "keps",
+        "vit",
+        "träning"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Blå Bomullshatt",
+      "price": 99,
+      "image": "https://img.freepik.com/free-photo/green-cap-fashion-white-elegance_1203-6074.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "blå",
+        "bomull"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Stråhatt Grå med Kort Brätte",
+      "price": 149,
+      "image": "https://img.freepik.com/free-photo/sun-background-brown-hat-fashion_1203-6315.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "strå",
+        "grå"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Rosa Bomullshatt",
+      "price": 99,
+      "image": "https://img.freepik.com/free-photo/leprechaun-hat-green-sun-fashion_1203-6076.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "rosa",
+        "bomull"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Vit stråhatt med svart band",
+      "price": 189,
+      "image": "https://img.freepik.com/free-photo/sun-vintage-accessory-beautiful-cap_1203-5407.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "hatt",
+        "strå",
+        "vit"
+      ]
+    },
+    {
+      "name": "Lila stråhatt",
+      "price": 99,
+      "image": "http",
+      "tags": [
+        "hatt",
+        "lila",
+        "strå"
+      ],
+      "id": 21
+    },
+    {
+      "name": "Lila hipphatt",
+      "price": 99,
+      "image": "http",
+      "tags": [
+        "hatt",
+        "lila",
+        "strå"
+      ],
+      "id": 22
+    }
+  ]
+}
