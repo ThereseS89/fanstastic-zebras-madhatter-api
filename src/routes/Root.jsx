@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import Header from '../Components/Header.jsx'
-// import Footer from '../Components/Footer.jsx'
+import Footer from '../Components/Footer.jsx'
 
 
 
@@ -11,7 +11,7 @@ const Root = () => {
 		<main>
 			<Outlet />
 		</main>
-		{/* <Footer /> */}
+		<Footer />
 	</>
 	)
 }

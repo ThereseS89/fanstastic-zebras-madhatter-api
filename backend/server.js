@@ -6,9 +6,11 @@ import productsRouter from './routes/products.js'
 import usersRouter from './routes/users.js'
 import searchRouter from './routes/search .js'
 
+
 //Konfiguerara server
 const port = 2023
 const app = express()
+
 
 //Middleware
 //-lägger vi till sen för att använda req.body 
@@ -19,8 +21,8 @@ app.use((req, res, next) => {
 })
 app.use( cors() )
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const pathToStaticFolder = join(__dirname, '../dist')
-app.use(express.static(pathToStaticFolder))
+const dist = join(__dirname, '../dist')
+app.use(express.static(dist))
 
 app.use('/api', express.json())
 

@@ -236,28 +236,6 @@
         "strå",
         "vit"
       ]
-    },
-    {
-      "name": "Lila stråhatt",
-      "price": 99,
-      "image": "http",
-      "tags": [
-        "hatt",
-        "lila",
-        "strå"
-      ],
-      "id": 21
-    },
-    {
-      "name": "Lila hipphatt",
-      "price": 99,
-      "image": "http",
-      "tags": [
-        "hatt",
-        "lila",
-        "strå"
-      ],
-      "id": 22
     }
   ]
 }

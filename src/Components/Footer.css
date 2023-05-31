@@ -1,0 +1,16 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    height: 8em;
+    width: 100%;
+    padding: 1em;
+    color: rgb(243, 210, 22);
+    background-color: rgb(43, 43, 43);
+}
+
+.footer > h1 {
+
+font-size: 20px;
+}
