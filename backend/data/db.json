@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Ann-Sophie",
-      "password": "red1"
+      "password": "red3"
     },
     {
       "id": 2,
@@ -14,6 +14,11 @@
       "id": 3,
       "name": "Terese",
       "password": "red3"
+    },
+    {
+      "name": "Anders",
+      "password": "kalle123",
+      "id": 4
     }
   ],
   "products": [

@@ -19,6 +19,7 @@ router.get('/:id', async (req, res) => {
 	console.log('GET /users/:id')
 	if(!isValidId(req.params.id) ) {
 		res.sendStatus(400) //Bad request
+		console.log('Incorrent value, must be a number for Id..')
 		return
 	} 
 	let id = Number(req.params.id)
@@ -27,9 +28,11 @@ router.get('/:id', async (req, res) => {
 	let mayBeUsers = db.data.users.find(user => user.id === id)
 	if(!mayBeUsers) {
 		res.sendStatus(404) //not found
+		console.log('Could not found the correct id in the list.. ')
 		return
 	}
-	res.send(mayBeUsers)
+	res.status(200).send(mayBeUsers)
+	console.log('Found the correct user..')
 
 })
 
@@ -42,7 +45,7 @@ router.post('/', async (req, res) => {
 	
 	if (isValidUser(mayBeUsers)) {
 		await db.read()
-		if ( await userExists(mayBeUsers)) {
+		if ( await userExists(db.data.users,mayBeUsers.name, mayBeUsers.password)) {
 			res.sendStatus(409) 
 			console.log('Användaren finns redan')
 		}else{
@@ -65,12 +68,14 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
 	if(!isValidId(req.params.id)) {
 		res.sendStatus(400) 
+		console.log('Incorrect value, had to be a number for id..')
 		return
 	}
 	let id = Number(req.params.id)
 
 	if(!isValidUser(req.body) || !hasId) {
 		res.sendStatus(400)
+		console.log('Incorrect value..')
 		return
 	}
 	let editUser = req.body 
@@ -78,18 +83,21 @@ router.put('/:id', async (req, res) => {
 	let oldUserIndex = db.data.users.findIndex(user => user.id === id)
 	if(oldUserIndex === -1) {
 		res.sendStatus(404)
+		console.log('Could not found the id to change users..')
 		return
 	}
+	editUser.id = id
 	db.data.users[oldUserIndex] = editUser
 	await db.write()
 	res.sendStatus(200)
+	console.log('Now you have change the user..')
 })
 
 //kunna ta bort en användare 
 router.delete('/:id', async(req, res) => {
-	console.log('Delete One/user; ')
 	if( !isValidId(req.params.id)) {
 		res.sendStatus(400) //Bad Request
+		console.log('Delete One/user, incorrect value..')
 		return
 	}
 	let id = Number(req.params.id)
@@ -99,11 +107,13 @@ router.delete('/:id', async(req, res) => {
 	let mayBeUsers = db.data.users.find(user => user.id === id)
 	if(!mayBeUsers) {
 		res.sendStatus(404) //Not found
+		console.log('Delete One/user, Could not found id in the list ')
 		return
 	}
 	db.data.users = db.data.users.filter(user => user.id !== id)
 	await db.write()
 	res.sendStatus(200) //Det är ok!
+	console.log('Now is the user removed.')
 
 })
 
