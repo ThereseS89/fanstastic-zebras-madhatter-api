@@ -14,7 +14,8 @@
 
 .header > h1 {
   font-family: "Mystery Quest", cursive;
-  color: rgb(243, 210, 22);
+  font-weight: 100;
+  color: #f9c23c ;
   margin-bottom: 0.5em;
 }
 
@@ -28,21 +29,24 @@
   text-align: center;
   display: grid;
   align-items: center;
+  justify-content: center;
   font-family: "Mystery Quest", cursive;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 18px;
   text-decoration: none;
   margin: 0 0.8em;
-  padding: 0.2em 0.7em;
-  border: 1px solid rgb(243, 210, 22);
+  padding: 0.3em 0.7em;
+  border: 1px solid #f9c23c ;
   border-radius: 0.3em;
-  color: rgb(243, 210, 22);
+  color: #f9c23c ;
 }
 
-header nav *:hover,
-header nav *.active {
-  background-color: rgb(243, 210, 22);
+
+.header > nav *:hover,
+.header > nav *.active {
+  background-color: #f9c23c ;
   color: rgb(43, 43, 43);
   cursor: pointer;
-  transform: translateY(-0.4em);
-  box-shadow: 0em 0.4em 0.3em rgb(0, 0, 0);
+  transform: translateY(-0.2em);
+  box-shadow: 0 0.3em 0.3em rgb(240, 239, 175);
 }
