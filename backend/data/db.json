@@ -243,26 +243,15 @@
       ]
     },
     {
-      "name": "Lila stråhatt",
-      "price": 99,
-      "image": "http",
+      "name": "Grå hatt med vit skärm",
+      "price": 179,
+      "image": "https://img.freepik.com/free-photo/sun-vintage-accessory-beautiful-cap_1203-5407.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
       "tags": [
         "hatt",
-        "lila",
-        "strå"
+        "grå",
+        "vit"
       ],
       "id": 21
-    },
-    {
-      "name": "Lila hipphatt",
-      "price": 99,
-      "image": "http",
-      "tags": [
-        "hatt",
-        "lila",
-        "strå"
-      ],
-      "id": 22
     }
   ]
 }

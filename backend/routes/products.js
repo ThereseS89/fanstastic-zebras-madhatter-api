@@ -85,12 +85,14 @@ else {
 router.put('/:id', async (req,res) => {
 	if(!isValidId(req.params.id)) {
 		res.sendStatus(400)
+		console.log('Incorrect value, had to be a number for id..')
 		return
 	}
 	let id = Number(req.params.id)
 
 	if( !isValidHat(req.body) || !hasId ) {
 		res.sendStatus(400)
+		console.log('Incorrect value..')
 		return
 	}
 
@@ -99,17 +101,21 @@ router.put('/:id', async (req,res) => {
 	let oldHatIndex = db.data.products.findIndex(hat => hat.id === id)
 	if( oldHatIndex === -1 ) {
 		res.sendStatus(404)
+		console.log('Could not found the id to change the product..')
 		return
 	}
+	editedHat.id = id
 	db.data.products[oldHatIndex] = editedHat
 	await db.write()
 	res.sendStatus(200)
+	console.log('Now you have change the product..')
 })
 
 // Kunna ta bort en produkt
 router.delete('/:id', async (req, res) => {
 	if(!isValidId(req.params.id)) {
 		res.sendStatus(400)
+		console.log('Delete one Product - Incorrect value has to be a number.')
 		return
 	}
 	let id = Number(req.params.id)
@@ -117,11 +123,13 @@ router.delete('/:id', async (req, res) => {
 	let maybeHat = db.data.products.find(hat => hat.id === id)
 	if (!maybeHat) {
 		res.sendStatus(404)
+		console.log('Delete One product, Could not found id in the product-list ')
 		return
 	}
 	db.data.products = db.data.products.filter(hat => hat.id !== id)
 	await db.write()
 	res.sendStatus(200)
+	console.log('Now is the product deleted.')
 } )
 
 

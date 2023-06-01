@@ -113,7 +113,7 @@ router.delete('/:id', async(req, res) => {
 	db.data.users = db.data.users.filter(user => user.id !== id)
 	await db.write()
 	res.sendStatus(200) //Det är ok!
-	console.log('Now is the user removed.')
+	console.log('Now is the user deleted.')
 
 })
 
