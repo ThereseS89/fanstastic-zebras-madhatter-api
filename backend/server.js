@@ -30,6 +30,10 @@ app.use('/api/products', productsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/search', searchRouter)
 
+app.get('*', (req, res) => {
+	res.sendFile(join(dist, 'index.html'))
+})
+
 //starta
 app.listen(port, () => {
 	console.log(`Server is listening on port ${port}`)
