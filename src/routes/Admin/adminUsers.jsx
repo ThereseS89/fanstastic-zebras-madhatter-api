@@ -1,8 +1,7 @@
 import { getUsers } from '../../ApiFunctions/getUsers.js'
 import { useEffect, useState } from "react"
 import './adminUsers.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
+
 
 const AdminUsers = () => {
 	const [users, setUsers] = useState([])

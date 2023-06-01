@@ -64,13 +64,6 @@ else {
 }
 })
 
-
-// function generateProductId() {
-// 	const highestId = Number(db.data.products.reduce((maxId, currentProduct) => { return Math.max(maxId,  currentProduct.id)
-// 	}, 0))
-// 	return highestId + 1
-// }
-
 	async function isHat(h) {
 	console.log('db.data:', db.data);
 	let existingHat = db.data.products.some(product => product.name === h.name && product.image === h.image)
