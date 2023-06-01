@@ -3,10 +3,13 @@ import { useState } from "react";
 import { useEffect } from "react";
 import './adminProducts.css'
 import deleteProduct from "../../ApiFunctions/deleteProduct";
+import { editProduct } from "../../ApiFunctions/putProducts";
 
 
 const AdminProducts = () => {
 	const [hats, sethats] = useState([])
+	const [editedData, setEditedData] = useState({name: '', price: 0, image: '', tags: []});
+	const [editProductId, setEditProductId] = useState(null)
 
 	useEffect(() => {
 		// loadProducts()
@@ -22,6 +25,30 @@ const handleDelete = async (productId) => {
 	await deleteProduct(productId)
 }
 
+// Här kommer funktioner som har med PUT funktioner -- ändra en produkt
+function handleInputChange(event) {
+	const { name, value } = event.target;
+	setEditedData({ ...editedData, [name]: value
+	})
+}
+
+const handleEdit = (productId) => {
+	setEditProductId(productId)
+}
+
+const handleCancelEdit = () => {
+	setEditProductId(null)
+	setEditedData({name: "", price: 0, image: "", tags: []})
+}
+
+const handleSubmitEdit = async (productId) => {
+	await editProduct(editedData.name, editedData.price, editedData.image, editedData.tags, productId)
+	setEditProductId(null)
+	setEditedData({name: "", price: 0, image: "", tags: []})
+	const hatsData = await getProducts()
+	sethats(hatsData)
+}
+
 	return (
 
 		
@@ -32,7 +59,8 @@ const handleDelete = async (productId) => {
 				<input 
 					type="text"
 					id="name"
-				 />
+			
+				/>
 				<label htmlFor="price">Pris</label>
 				<input 
 					type="text"
@@ -55,21 +83,56 @@ const handleDelete = async (productId) => {
 					<div
 						className="hat-container"
 						key={i}>
+							{editProductId === hat.id ? (
+								
+									<form onSubmit={editProduct()}>
+							<input
+								type="text"
+								name="name"
+								value={editedData.name}
+								onChange={handleInputChange}
+							/>
+							<input
+								type="text"
+								name="image"
+								value={editedData.image}
+								onChange={handleInputChange}
+							/>
+							<input
+								type="text"
+								name="price"
+								value={editedData.price}
+								onChange={handleInputChange}
+							/>
+							<button type="submit" onClick={() => handleSubmitEdit(hat.id)}>Spara</button>
+							<button type="button" onClick={handleCancelEdit}>Avbryt</button>
+						</form>
+							) : ( 
+							<div>
 
 						<h2 className="head-hat-text">{hat.name}</h2>
+						
 						<p>{hat.tags.join(" ")}</p>
 						<div className="image-container">
 
 							<img className="hat-image"
 								src={hat.image} /></div>
+					
 
 						<div className="price-container-hat">
 							<p>{hat.price} Kr</p>
 						</div>
+						
+							
+						
 						<div className="hat-button-container">
 						<button onClick={() => handleDelete(hat.id)}>Ta bort</button>
-						<button>Ändra</button>
+						
+						<button type="submit"
+						onClick={() => handleEdit(hat.id)}>Ändra</button>
 						</div>
+						</div>
+							)}
 					</div>
 				)) : null}
 			</ul>
