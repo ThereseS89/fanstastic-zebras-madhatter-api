@@ -38,7 +38,7 @@ router.get('/:id', async (req, res) => {
 
 //lägga till nya produkter 
 router.post('/', async (req, res) =>{
-
+console.log('Request body:', req.body);
 let possibleNewHat = req.body 
 console.log('post possibleNewHat:', possibleNewHat);
 
@@ -64,13 +64,6 @@ else {
 }
 })
 
-
-// function generateProductId() {
-// 	const highestId = Number(db.data.products.reduce((maxId, currentProduct) => { return Math.max(maxId,  currentProduct.id)
-// 	}, 0))
-// 	return highestId + 1
-// }
-
 	async function isHat(h) {
 	console.log('db.data:', db.data);
 	let existingHat = db.data.products.some(product => product.name === h.name && product.image === h.image)
@@ -83,6 +76,7 @@ else {
 
 // Kunna ändra i produkterna
 router.put('/:id', async (req,res) => {
+	console.log('PUT request received:', req.params.id, req.body)
 	if(!isValidId(req.params.id)) {
 		res.sendStatus(400)
 		console.log('Incorrect value, had to be a number for id..')

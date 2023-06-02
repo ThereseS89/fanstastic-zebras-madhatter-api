@@ -1,0 +1,39 @@
+.admin-product-container{
+	margin-top: 2em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.admin-product-container >h3 {
+	padding-bottom: 1em;
+}
+
+.admin-product-container button {
+	margin: 0.5em;
+	padding: 0.3em 0.5em;
+	color: #f9c23c;
+	font-weight: bold;
+	background-color: black; 
+}
+
+.admin-product-container .hat-container {
+	height: 360px;
+
+} 
+
+.admin-product-container form {
+
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: left;
+	margin: 0.5em 0.5em 3em; 
+	padding: 1em; 
+	width: 300px; 
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.admin-product-container input {
+	margin-bottom: 1em;
+}

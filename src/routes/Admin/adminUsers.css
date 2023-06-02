@@ -1,0 +1,90 @@
+.form-container {
+	background-color: rgb(242, 243, 238);
+	padding: 2em; 
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px
+}
+.new-user-head {
+	padding: 1em; 
+	font-weight: bold;
+}
+
+.admin-new-user {
+	display: flex; 
+	flex-direction: column;
+	justify-content: center;
+}
+.input-users {
+	margin: 0.3em 0.2em; 
+}
+
+.input-box {
+	padding: 0.5em; 
+	margin: 0.3em 0em;  
+	width: 80%; 
+}
+
+.user-head {
+	margin-top: 2em; 
+	text-align: center;
+	padding: 0.5em; 
+}
+.users-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	background-color: rgb(242, 243, 238);
+	margin: 0.5em; 
+	padding: 1em; 
+	width: 300px; 
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+	
+} 
+
+.user-container {
+	margin: 0.5em 0.3em;  
+	padding: 0.5em; 
+}
+
+.user-info, .user-password {
+	font-weight: bold;
+}
+.user-password {
+	margin-bottom: 0.5em; 
+}
+
+/*Buttonknappen*/
+.new-user-button {
+	color: #f9c23c;
+	font-weight: bold;
+	background-color: black; 
+	margin-top: 1em; 
+	padding: 1em; 
+	border-radius: 10px; 
+	border: 1px solid #f9c23c; 
+}
+
+.new-user-button:hover {
+	color: black; 
+	background-color: #f9c23c;
+	border: none; 
+}
+
+.button-container {
+	margin: 0.5em 0em; 
+
+}
+.remove-button, .change-button {
+	color: #f9c23c;
+	background-color: black;
+	padding: 0.7em; 
+	margin: 0em 0.5em 0em 0.2em; 
+	border-radius: 10px;
+	border: 1px solid #f9c23c;
+	font-weight: bold;
+}
+.remove-button:hover, .change-button:hover {
+	color: black; 
+	background-color: #f9c23c;
+	border: none; 
+}

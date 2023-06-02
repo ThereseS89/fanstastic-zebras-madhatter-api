@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap");
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed ;
+  height: 8em;
+  width: 100%;
+  padding: 0.2em;
+  background-color: rgb(43, 43, 43);
+}
+
+.header > h1 {
+  font-family: "Mystery Quest", cursive;
+  font-weight: 100;
+  color: #f9c23c ;
+  margin-bottom: 0.5em;
+}
+
+.header > nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header > nav > * {
+  text-align: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: "Mystery Quest", cursive;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 0 0.8em;
+  padding: 0.3em 0.7em;
+  border: 1px solid #f9c23c ;
+  border-radius: 0.3em;
+  color: #f9c23c ;
+}
+
+
+.header > nav *:hover,
+.header > nav *.active {
+  background-color: #f9c23c ;
+  color: rgb(43, 43, 43);
+  cursor: pointer;
+  transform: translateY(-0.2em);
+  box-shadow: 0 0.3em 0.3em rgb(240, 239, 175);
+}

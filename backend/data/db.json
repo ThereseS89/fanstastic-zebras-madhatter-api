@@ -14,56 +14,19 @@
       "id": 3,
       "name": "Terese",
       "password": "red3"
-    },
-    {
-      "name": "Anders",
-      "password": "kalle123",
-      "id": 4
     }
+ 
   ],
   "products": [
     {
-      "id": 1,
-      "name": "Klassisk Svart Hatt",
-      "price": 149,
-      "image": "https://img.freepik.com/free-vector/black-top-hat-isolated_1284-43034.jpg?size=626&ext=jpg&ga=GA1.2.1027157510.1664794963&semt=ais",
-      "tags": [
-        "hatt",
-        "svart",
-        "klassisk"
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Rosa baseballkeps",
-      "price": 79,
-      "image": "https://img.freepik.com/free-photo/blue-clothing-merchandise-cotton-blank_1203-5370.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
-      "tags": [
-        "keps",
-        "rosa",
-        "baseball"
-      ]
-    },
-    {
       "id": 3,
       "name": "Lila Bomullshatt",
-      "price": 99,
+      "price": 149,
       "image": "https://img.freepik.com/free-photo/pretty-blue-hat_1203-1944.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
       "tags": [
         "hatt",
         "lila",
         "bomull"
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Grön Camouflagekeps",
-      "price": 89,
-      "image": "https://www.freepik.com/free-psd/military-cap-mockup_2100631.htm#query=camo%20cap&position=0&from_view=search&track=ais",
-      "tags": [
-        "keps",
-        "grön",
-        "camouflage"
       ]
     },
     {
@@ -79,7 +42,7 @@
     },
     {
       "id": 6,
-      "name": "Ljusgrå Filthat",
+      "name": "Ljusgrå Filthatt",
       "price": 199,
       "image": "https://img.freepik.com/free-photo/female-beauty-brown-cap-summer_1203-6317.jpg?size=626&ext=jpg&ga=GA1.2.1027157510.1664794963&semt=ais",
       "tags": [
@@ -243,13 +206,13 @@
       ]
     },
     {
-      "name": "Grå hatt med vit skärm",
-      "price": 179,
-      "image": "https://img.freepik.com/free-photo/sun-vintage-accessory-beautiful-cap_1203-5407.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "name": "Klassisk Svart Hatt",
+      "price": 149,
+      "image": "https://img.freepik.com/free-vector/black-top-hat-isolated_1284-43034.jpg?size=626&ext=jpg&ga=GA1.2.1027157510.1664794963&semt=ais",
       "tags": [
-        "hatt",
-        "grå",
-        "vit"
+        "klassisk",
+        "svart",
+        "hatt"
       ],
       "id": 21
     }

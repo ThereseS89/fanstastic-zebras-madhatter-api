@@ -1,0 +1,39 @@
+.hat-image {
+	width: 200px;
+}
+
+.hats-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-items: center;
+	padding: 0;
+}
+
+.hat-container {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+	width: 250px;
+	height: 311px;
+	margin: 0.5em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1em;
+	
+}
+
+.head-hats {
+	text-align: center;
+	padding: 1em;
+}
+
+.search {
+	display: flex;
+	flex-direction: column;
+	margin: 1em;
+}
+
+.search >input {
+	width: 15em;
+	
+}

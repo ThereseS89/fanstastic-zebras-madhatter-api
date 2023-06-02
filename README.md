@@ -31,7 +31,7 @@ The API is built to support the metods "GET", "POST, "PUT", "DELETE".
 
 How to get all the products:
 
-```
+```js
 const urlProducts = "...api/products"
 
 	async functions getHats(){
@@ -50,7 +50,7 @@ const urlProducts = "...api/products"
 
 #### Responses
 	The API returns in JSON format like this: 
-```
+```js
 	{
       "id": 1,
       "name": "Klassisk Svart Hatt",
@@ -64,7 +64,7 @@ const urlProducts = "...api/products"
     }
 ```
 	Or like this for users:
-```
+```js
 	{
       "name": "Benny",
       "password": "grävmask",
@@ -85,7 +85,7 @@ const urlProducts = "...api/products"
 	| 400         | Bad request |
 	| 404         | Not found   |
 	| 409         | Conflict    |
-	| 500         | Internal Server problem|
+	| 500         | Internal Server Error|
 
 
 ### Maintance and support: 
