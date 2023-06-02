@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
 import express from 'express'
 import cors from 'cors'
 import {join, dirname} from 'path'
@@ -8,7 +10,7 @@ import searchRouter from './routes/search .js'
 
 
 //Konfiguerara server
-const port = 2023
+const port = process.env.PORT || 2023
 const app = express()
 
 

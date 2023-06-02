@@ -15,7 +15,6 @@
       "name": "Terese",
       "password": "red3"
     }
- 
   ],
   "products": [
     {
@@ -215,6 +214,28 @@
         "hatt"
       ],
       "id": 21
+    },
+    {
+      "name": "Rosa baseballkeps",
+      "price": 79,
+      "image": "https://img.freepik.com/free-photo/blue-clothing-merchandise-cotton-blank_1203-5370.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
+      "tags": [
+        "keps",
+        "rosa",
+        "baseball"
+      ],
+      "id": 22
+    },
+    {
+      "id": 23,
+      "name": "Grön Camouflagekeps",
+      "price": 89,
+      "image": "https://img.freepik.com/free-psd/military-cap-mockup_1310-901.jpg?size=626&ext=jpg&ga=GA1.2.1027157510.1664794963&semt=ais",
+      "tags": [
+        "keps",
+        "grön",
+        "camouflage"
+      ]
     }
   ]
 }
