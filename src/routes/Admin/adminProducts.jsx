@@ -53,18 +53,6 @@ const handleAddProduct = async(event) => {
 }
 
 // Här kommer funktioner som har med PUT funktioner -- ändra en produkt
-// function handleInputChange(event) {
-// 	const { name, value } = event.target;
-// 	if (name === 'name') {
-// 		setEditedName(value)
-// 	}  else if (name === 'price') {
-// 		setEditedPrice(value);
-// 	} else if (name === 'image') {
-// 		setEditedImage(value);
-// 	} else if (name === 'tags') {
-// 		setEditedTags(value);
-// 	}
-// }
 
 const handleEdit = (productId) => {
 	setEditProductId(productId)

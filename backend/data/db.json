@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Ann-Sophie",
-      "password": "red1"
+      "password": "madhatter4"
     },
     {
       "id": 2,
@@ -16,28 +16,12 @@
       "password": "red3"
     },
     {
-      "name": "Anna",
-      "password": "fjäder",
-      "id": 4
-    },
-    {
       "name": "Jonna",
       "password": "gumma",
       "id": 5
     }
   ],
   "products": [
-    {
-      "id": 2,
-      "name": "Rosa baseballkeps",
-      "price": 79,
-      "image": "https://img.freepik.com/free-photo/blue-clothing-merchandise-cotton-blank_1203-5370.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
-      "tags": [
-        "keps",
-        "rosa",
-        "baseball"
-      ]
-    },
     {
       "id": 3,
       "name": "Lila Spidermanhatt",
@@ -47,17 +31,6 @@
         "hatt",
         "lila",
         "bomull"
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Grön Camouflagekeps",
-      "price": 89,
-      "image": "https://img.freepik.com/free-psd/military-cap-mockup_1310-901.jpg?size=626&ext=jpg&ga=GA1.2.1027157510.1664794963&semt=ais",
-      "tags": [
-        "keps",
-        "grön",
-        "camouflage"
       ]
     },
     {
