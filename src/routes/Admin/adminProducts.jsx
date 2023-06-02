@@ -8,8 +8,12 @@ import { editProduct } from "../../ApiFunctions/putProducts";
 
 const AdminProducts = () => {
 	const [hats, sethats] = useState([])
-	const [editedData, setEditedData] = useState({name: '', price: 0, image: '', tags: []});
 	const [editProductId, setEditProductId] = useState(null)
+	const [editedPrice, setEditedPrice] = useState(0)
+	const [editedName, setEditedName] = useState('')
+	const [editedImage, setEditedImage] = useState('')
+	const [editedTags, setEditedTags] = useState([])
+
 
 	useEffect(() => {
 		// loadProducts()
@@ -26,24 +30,47 @@ const handleDelete = async (productId) => {
 }
 
 // Här kommer funktioner som har med PUT funktioner -- ändra en produkt
-function handleInputChange(event) {
-	const { name, value } = event.target;
-	setEditedData({ ...editedData, [name]: value
-	})
-}
+// function handleInputChange(event) {
+// 	const { name, value } = event.target;
+// 	if (name === 'name') {
+// 		setEditedName(value)
+// 	}  else if (name === 'price') {
+// 		setEditedPrice(value);
+// 	} else if (name === 'image') {
+// 		setEditedImage(value);
+// 	} else if (name === 'tags') {
+// 		setEditedTags(value);
+// 	}
+// }
 
 const handleEdit = (productId) => {
 	setEditProductId(productId)
+	const selectedProduct = hats.find((hat) => hat.id === productId)
+	setEditedName(selectedProduct.name);
+	setEditedPrice(selectedProduct.price);
+    setEditedImage(selectedProduct.image);
+    setEditedTags(selectedProduct.tags);
+
 }
 
 const handleCancelEdit = () => {
 	setEditProductId(null)
-	setEditedData({name: "", price: 0, image: "", tags: []})
+	setEditedName('')
+	setEditedPrice(0)
+	setEditedImage('')
+	setEditedTags([])
 }
 
 const handleSubmitEdit = async (productId, event) => {
-	await editProduct(editedData.name, editedData.price, editedData.image, editedData.tags, productId)
-	event.preventDefault()
+	event.preventDefault();
+	await editProduct(editedName, Number(editedPrice), editedImage, editedTags, productId)
+	console.log('handleSubmit: Koden körs 1')
+
+	const hatsData = await getProducts()
+	sethats(await hatsData)
+
+	setEditProductId(null)
+
 }
 
 	return (
@@ -82,28 +109,29 @@ const handleSubmitEdit = async (productId, event) => {
 						key={i}>
 							{editProductId === hat.id ? (
 								
-									<form onSubmit={editProduct()}>
+							<div>
 							<input
 								type="text"
-								name="name"
-								value={editedData.name}
-								onChange={handleInputChange}
+								value={editedName}
+								onChange={(e) => setEditedName(e.target.value)}/>
+							<input
+								type="text"
+								value={editedImage}
+								onChange={(e) => setEditedImage(e.target.value)}
 							/>
 							<input
 								type="text"
-								name="image"
-								value={editedData.image}
-								onChange={handleInputChange}
+								value={editedPrice}
+								onChange={(e) => setEditedPrice(e.target.value)}
 							/>
 							<input
 								type="text"
-								name="price"
-								value={editedData.price}
-								onChange={handleInputChange}
+								value={editedTags}
+								onChange={(e) => setEditedTags(e.target.value)}
 							/>
-							<button type="submit" onClick={handleSubmitEdit}>Spara</button>
+							<button type="button" onClick={(event) => handleSubmitEdit(hat.id, event)}>Spara</button>
 							<button type="button" onClick={handleCancelEdit}>Avbryt</button>
-						</form>
+						</div>
 							) : ( 
 							<div>
 

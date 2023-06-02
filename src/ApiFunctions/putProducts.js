@@ -1,9 +1,9 @@
 
 
-export async function editProduct(name, price, image, tags, id) {
-
+export async function editProduct(name, price, image, tags, productId) {
+	console.log('editProduct called with:', name, price, image, tags, productId);
 	const changedData = {
-		id: id,
+		id: productId,
 		name: name,
 		price: price,
 		image: image,
@@ -15,13 +15,21 @@ export async function editProduct(name, price, image, tags, id) {
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify(changedData)
 	}
-
-	const response = await fetch('/api/products/id', options)
-	const statusObject = await response.json()
-	console.log('Response from API:', statusObject)
-	if(statusObject.status === 'success' ) {
-		return true; 
-	} else {
-		return false; 
+	console.log('Ändrad data: ', changedData)
+	console.log('Options: ', options)
+	
+	try {
+		const response = await fetch(`/api/products/${productId}`, options)
+		const statusObject = await response.json()
+		console.log('Response from API:', statusObject)
+		console.log('Response: ', response)
+		if(statusObject.status === 'success' ) {
+			return true; 
+		} else {
+			return false; 
+		}
+	} catch(error) {
+		console.error("Fetch error:", error)
 	}
+	
 }

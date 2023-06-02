@@ -76,14 +76,17 @@ else {
 
 // Kunna ändra i produkterna
 router.put('/:id', async (req,res) => {
+	console.log('PUT request received:', req.params.id, req.body)
 	if(!isValidId(req.params.id)) {
-		res.sendStatus(400)
+		console.log('Invalid ID: ', req.params.id)
+		res.status(400).json({message: 'Invalid ID'})
 		return
 	}
 	let id = Number(req.params.id)
 
 	if( !isValidHat(req.body) || !hasId ) {
-		res.sendStatus(400)
+		console.log('Invalid hat or missing ID:' , req.body)
+		res.status(400).json({message: 'invalid hat or missing ID'})
 		return
 	}
 
