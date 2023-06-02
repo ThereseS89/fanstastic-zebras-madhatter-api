@@ -18,17 +18,6 @@
   ],
   "products": [
     {
-      "id": 1,
-      "name": "Klassisk Svart Hatt",
-      "price": 149,
-      "image": "https://img.freepik.com/free-vector/black-top-hat-isolated_1284-43034.jpg?size=626&ext=jpg&ga=GA1.2.1027157510.1664794963&semt=ais",
-      "tags": [
-        "hatt",
-        "svart",
-        "klassisk"
-      ]
-    },
-    {
       "id": 2,
       "name": "Rosa baseballkeps",
       "price": 79,

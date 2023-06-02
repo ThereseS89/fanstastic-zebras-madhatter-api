@@ -41,12 +41,9 @@ const handleCancelEdit = () => {
 	setEditedData({name: "", price: 0, image: "", tags: []})
 }
 
-const handleSubmitEdit = async (productId) => {
+const handleSubmitEdit = async (productId, event) => {
 	await editProduct(editedData.name, editedData.price, editedData.image, editedData.tags, productId)
-	setEditProductId(null)
-	setEditedData({name: "", price: 0, image: "", tags: []})
-	const hatsData = await getProducts()
-	sethats(hatsData)
+	event.preventDefault()
 }
 
 	return (
@@ -104,7 +101,7 @@ const handleSubmitEdit = async (productId) => {
 								value={editedData.price}
 								onChange={handleInputChange}
 							/>
-							<button type="submit" onClick={() => handleSubmitEdit(hat.id)}>Spara</button>
+							<button type="submit" onClick={handleSubmitEdit}>Spara</button>
 							<button type="button" onClick={handleCancelEdit}>Avbryt</button>
 						</form>
 							) : ( 
