@@ -9,11 +9,10 @@ async function deleteProduct (productId) {
 console.log(data);
 	const options = {
 		method: 'delete',
-		body: JSON.stringify(data)
 	}
 	console.log(data);
 
-	const response = await fetch('/api/products/:id', options)
+	const response = await fetch(`/api/products/${productId}`, options)
 	const statusObject = await response.json()
 		if (statusObject.status === 'success') {
 			console.log('success');
