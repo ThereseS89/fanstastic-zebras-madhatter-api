@@ -3,10 +3,16 @@ import { useState } from "react";
 import { useEffect } from "react";
 import './adminProducts.css'
 import deleteProduct from "../../ApiFunctions/deleteProduct";
+import addProduct from "../../ApiFunctions/addProduct";
 
 
 const AdminProducts = () => {
 	const [hats, sethats] = useState([])
+	const [image, setImage] = useState('')
+	const [name, setName] = useState('')
+	const [price, setPrice] = useState()
+	const [tags, setTags] =useState([])
+
 
 	useEffect(() => {
 		// loadProducts()
@@ -20,6 +26,24 @@ const AdminProducts = () => {
 
 const handleDelete = async (productId) => {
 	await deleteProduct(productId)
+	
+}
+
+const handleAddProduct = async(event) => {
+	event.preventDefault()
+	console.log('click');
+	const tagsArray = tags.split(',').map( tag => tag.trim())
+	const priceAsNumber = Number(price)
+	try { await addProduct(name, priceAsNumber, image, tagsArray )
+			console.log('Produkten tillagd');
+			if(addProduct){
+				const hatsData = await getProducts()
+    			sethats(await hatsData)
+			}
+			} catch (error) {
+				console.log('Något gick fel');
+			}
+		
 }
 
 	return (
@@ -32,20 +56,33 @@ const handleDelete = async (productId) => {
 				<input 
 					type="text"
 					id="name"
+					value={name}
+					onChange={e => setName(e.target.value)}
 				 />
 				<label htmlFor="price">Pris</label>
 				<input 
-					type="text"
-					id="price" />
-				<label htmlFor="picture">Bild</label>
+					type="number"
+					id="price"
+					value={price}
+					onChange={e => setPrice(e.target.value)} 
+				/>
+				
+				<label htmlFor="image">Bild</label>
 				<input 
 					type="text"
-					id = "picture" />
+					id = "image"
+					value={image}
+					onChange={e => setImage(e.target.value)} 
+				/>
 				<label htmlFor="tags">Taggar</label>
 				<input 
 					type="text"
-					id="tags" />
-					<button>Lägg till</button>
+					id="tags"
+					placeholder="Separera taggarna med kommatecken"
+					value={tags}
+					onChange={e => setTags(e.target.value)} 
+					/>
+					<button onClick={handleAddProduct}>Lägg till</button>
 			</form>
 		<h3>Websidans alla produkter</h3>
 		<ul className="hats-list">

@@ -225,6 +225,17 @@
         "strå",
         "vit"
       ]
+    },
+    {
+      "name": "Klassisk Svart Hatt",
+      "price": 149,
+      "image": "https://img.freepik.com/free-vector/black-top-hat-isolated_1284-43034.jpg?size=626&ext=jpg&ga=GA1.2.1027157510.1664794963&semt=ais",
+      "tags": [
+        "klassisk",
+        "svart",
+        "hatt"
+      ],
+      "id": 21
     }
   ]
 }

@@ -38,7 +38,7 @@ router.get('/:id', async (req, res) => {
 
 //lägga till nya produkter 
 router.post('/', async (req, res) =>{
-
+console.log('Request body:', req.body);
 let possibleNewHat = req.body 
 console.log('post possibleNewHat:', possibleNewHat);
 
