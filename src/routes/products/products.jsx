@@ -26,10 +26,14 @@ const Products = () => {
 	return (
 		<section>
 			<h2 className="head-hats">Våra Hattar</h2>
+			<div className="search">
+			<label htmlFor="search" >Sök</label>
 			<input
 				type="text"
+				id="search"
 				onChange={(event) => handleOnChange(event)}
 				placeholder='Sök efter produkt...' />
+		</div>
 
 			<ul className="hats-list">
 

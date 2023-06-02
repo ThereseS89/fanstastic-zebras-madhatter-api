@@ -26,3 +26,14 @@
 	text-align: center;
 	padding: 1em;
 }
+
+.search {
+	display: flex;
+	flex-direction: column;
+	margin: 1em;
+}
+
+.search >input {
+	width: 15em;
+	
+}
