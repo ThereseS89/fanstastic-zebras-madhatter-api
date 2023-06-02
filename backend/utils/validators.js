@@ -1,4 +1,4 @@
-import { log } from "console"
+
 
 function isValidHat (h) {
 	if ((typeof h) !== 'object' || h === null){

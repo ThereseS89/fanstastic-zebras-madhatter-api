@@ -14,6 +14,16 @@
       "id": 3,
       "name": "Terese",
       "password": "red3"
+    },
+    {
+      "name": "Anna",
+      "password": "fjäder",
+      "id": 4
+    },
+    {
+      "name": "Jonna",
+      "password": "gumma",
+      "id": 5
     }
   ],
   "products": [
@@ -30,8 +40,8 @@
     },
     {
       "id": 3,
-      "name": "Lila Bomullshatt",
-      "price": 99,
+      "name": "Lila Spidermanhatt",
+      "price": 3899,
       "image": "https://img.freepik.com/free-photo/pretty-blue-hat_1203-1944.jpg?size=626&ext=jpg&ga=GA1.1.1027157510.1664794963&semt=ais",
       "tags": [
         "hatt",

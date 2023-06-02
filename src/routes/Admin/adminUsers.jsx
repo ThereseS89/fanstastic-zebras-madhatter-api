@@ -19,18 +19,34 @@ const AdminUsers = () => {
 	}, []);
 	console.log(users)
 
+	async function checkUserExists(name, password) {
+		const usersData = await getUsers();
+		return usersData.some(user => user.name === name || user.password === password);
+	}
+
 	const handleSubmit = async (event) => {
-		event.preventDefault(); 
-		if(userName && password)
+		event.preventDefault();
+		if (userName && password) {
 			try {
-				await addUser(userName, password)
-				console.log('Nu är produkten upplagd! ')
+				if (await checkUserExists(userName, password)) {
+					console.log("Användaren finns redan, Välj ett nytt namn eller lösenord.");
+				} else {
+					await addUser(userName, password);
+					if (addUser) {
+						// Uppdatera användarlistan efter att en ny användare har lagts till
+						const usersData = await getUsers();
+						setUsers(usersData);
+						console.log("Nu är användaren tillagd!");
+					}
+				}
 			} catch (error) {
-				console.log('Något gick fel, försök igen senare')
+				console.log("Något gick fel, försök igen senare.");
+			}
 		} else {
-			console.log('Kontrollera att alla fält är ifyllda')
+			console.log("Kontrollera att alla fält är ifyllda.");
 		}
-}
+	};
+
 
 	const handleUserName = (event) => {
 		setUserName(event.target.value)
@@ -43,7 +59,7 @@ const AdminUsers = () => {
 	return (
 		<section className="admin-container">
 			<div className='form-container'>
-				<form onSubmit={handleSubmit}className='admin-new-user'> 
+				<form className='admin-new-user'> 
 				<p className='new-user-head'>Lägga till en ny användare</p>
 				<label className='input-users'>Användarnamn: </label>
 				<input
