@@ -13,9 +13,7 @@ import searchRouter from './routes/search .js'
 const port = process.env.PORT || 2023
 const app = express()
 
-
 //Middleware
-//-lägger vi till sen för att använda req.body 
 // logger
 app.use((req, res, next) => {
 	console.log(`${req.method} ${req.url} `, req.body)

@@ -16,7 +16,6 @@ const AdminUsers = () => {
 	const [editedUserName, setEditedUserName] = useState('')
 
 	useEffect(() => {
-		//uploadUsers()
 		async function fetchData() {
 			const usersData = await getUsers(); 
 			setUsers(usersData)
@@ -43,7 +42,6 @@ const AdminUsers = () => {
 				} else {
 					await addUser(userName, password);
 					if (addUser) {
-						// Uppdatera användarlistan efter att en ny användare har lagts till
 						const usersData = await getUsers();
 						setUsers(usersData);
 						console.log("Nu är användaren tillagd!");

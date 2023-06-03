@@ -1,6 +1,4 @@
 
-// Fungerar ej, får bad request vid varje anrop
-
 async function deleteProduct (productId) {
 
 	const  data = {

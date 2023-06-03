@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
 	console.log('GET /users/:id')
 	if(!isValidId(req.params.id) ) {
-		res.sendStatus(400) //Bad request
+		res.sendStatus(400) 
 		console.log('Incorrent value, must be a number for Id..')
 		return
 	} 
@@ -27,7 +27,7 @@ router.get('/:id', async (req, res) => {
 	await db.read()
 	let mayBeUsers = db.data.users.find(user => user.id === id)
 	if(!mayBeUsers) {
-		res.sendStatus(404) //not found
+		res.sendStatus(404) 
 		console.log('Could not found the correct id in the list.. ')
 		return
 	}
@@ -41,7 +41,6 @@ router.post('/', async (req, res) => {
 
 	let mayBeUsers = req.body
 	console.log('Incoming user: ' , mayBeUsers)
-	// const users = db.data.users
 	
 	if (isValidUser(mayBeUsers)) {
 		await db.read()
@@ -55,11 +54,10 @@ router.post('/', async (req, res) => {
 			await db.write();
 			res.send(mayBeUsers);
 			console.log('post valid')
-			//id: mayBeUsers.id 
 		}
 	}
 	else {
-		res.sendStatus(400); // Bad request
+		res.sendStatus(400); 
 		console.log('felsöker, post invalid')
 	}
 
@@ -96,7 +94,7 @@ router.put('/:id', async (req, res) => {
 //kunna ta bort en användare 
 router.delete('/:id', async(req, res) => {
 	if( !isValidId(req.params.id)) {
-		res.sendStatus(400) //Bad Request
+		res.sendStatus(400)
 		console.log('Delete One/user, incorrect value..')
 		return
 	}
@@ -106,29 +104,15 @@ router.delete('/:id', async(req, res) => {
 
 	let mayBeUsers = db.data.users.find(user => user.id === id)
 	if(!mayBeUsers) {
-		res.sendStatus(404) //Not found
+		res.sendStatus(404)
 		console.log('Delete One/user, Could not found id in the list ')
 		return
 	}
 	db.data.users = db.data.users.filter(user => user.id !== id)
 	await db.write()
-	res.sendStatus(200) //Det är ok!
+	res.sendStatus(200) 
 	console.log('Now is the user deleted.')
 
 })
-
-
-// function generateUserId() {
-// 	const highestId = Number(db.data.users.reduce((maxId, currentUser) => {
-// 		return Math.max(maxId, currentUser.id) 
-// 	}, 0))
-// 	console.log('Generate: ', highestId)
-// 	return highestId + 1 
-	
-// }
-
-
-
-
 
 export default router

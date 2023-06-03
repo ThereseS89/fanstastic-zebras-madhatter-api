@@ -8,7 +8,6 @@ const Products = () => {
 	const [hats, sethats] = useState([])
 
 	useEffect(() => {
-		// uploadProducts()
 		async function fetchData() {
 			const hatsData = await getProducts();
 			sethats(await hatsData)

@@ -21,7 +21,6 @@ const AdminProducts = () => {
 
 
 	useEffect(() => {
-		// loadProducts()
 		async function fetchData() {
 			const hatsData = await getProducts();
 			sethats(await hatsData)
