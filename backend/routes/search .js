@@ -3,45 +3,75 @@ import { getDb } from '../data/database.js'
 
 
 const router = express.Router()
-const db = getDb()
+const db = await getDb()
 
-//hämta produkter utifrån tags 
-router.get('/', async (req, res) => {
-	let searchString = req.query.q
-
-	console.log('this is a posible tag:', searchString);
+//hämta produkter utifrån tags eller name
+router.get('/' , async (req, res) => {
+	let possibleSearch = req.query.q
+	let sortBy = req.query.sort 
+	let orderBy = req.query.order
+	
+console.log('this is apossible tag:', possibleSearch);
 	await db.read()
-	const products = db.data.products;
-	let matches = [];
+	
+	if( !possibleSearch || !sortBy || !orderBy){
+		console.log("Du måste använda rätt query-strings: 'q', 'sort', och 'order' ");
+		res.sendStatus(400)
+		return
+	}
 
-	products.forEach((product) => {
-		let isMatch = false;
-		product.tags.forEach(tag => {
-			if (tag.includes(searchString)) {
-				isMatch = true;
-			};
-		});
-		if (isMatch) {
-			matches.push(product);
-		};
-	});
+	if(sortBy !== 'price' && sortBy !== 'name') {
+		console.log("Kan bara sortera på 'name' eller 'price' ");
+		res.sendStatus(400)
+		return
+	}
 
-	matches.sort(function (a, b) {
+	if(orderBy !== 'asc' && orderBy !== 'desc') {
+		console.log("Kan bara sortera på 'asc' och 'desc' ");
+		res.sendStatus(400)
+		return
+	}
+
+	let possibleHats = db.data.products.filter((products) => products.name.toLowerCase().includes(possibleSearch.toLowerCase()))
+	console.log('hattar som matchar  ',possibleHats);
+
+	
+
+		possibleHats.sort(function(a, b) {
 		const nameA = a.name.toLowerCase()
 		const nameB = b.name.toLowerCase()
+		const priceA = a.price
+		const priceB = b.price
 
-		if (nameA > nameB) {
-			return 1
-		}
+		if(sortBy === "name" && orderBy === "asc"){
+			
+				return nameA > nameB ? 1 : -1
+			}
 
-		if (nameA < nameB) {
-			return -1
-		}
-		return 0
-	})
-	if (matches.length === 0) {
+		if (sortBy === "name" && orderBy === "desc") {
+				
+				return nameA < nameB ? 1 : -1
+			}
+
+		if(sortBy === "price" && orderBy === "asc"){
+			
+				return priceA > priceB ? 1 : -1
+			}
+
+		if (sortBy === "price" && orderBy === "desc") {
+				
+				return priceA < priceB ? 1 : -1
+				
+			}
+			return 0
+
+		})
+
+	if(possibleHats.length === 0){
 		res.sendStatus(404)
+		console.log('Produkten hittades inte');
+		return
 	}
-	res.send(matches)
+	res.send(possibleHats)
 })
 export default router
