@@ -13,9 +13,7 @@ router.get('/' , async (req, res) => {
 	
 console.log('this is apossible tag:', possibleSearch);
 	await db.read()
-	const products = db.data.products;
-	let matches = [];
-
+	
 	if( !possibleSearch || !sortBy || !orderBy){
 		console.log("Du måste använda rätt query-strings: 'q', 'sort', och 'order' ");
 		res.sendStatus(400)
@@ -34,7 +32,7 @@ console.log('this is apossible tag:', possibleSearch);
 		return
 	}
 
-	let possibleHats = db.data.products.filter(products => products.tags.some( tag => tag === possibleSearch)) || db.data.products.filter((products) => products.name.toLowerCase().includes(possibleSearch.toLocaleLowerCase()))
+	let possibleHats = db.data.products.filter((products) => products.name.toLowerCase().includes(possibleSearch.toLowerCase()))
 	console.log('hattar som matchar  ',possibleHats);
 
 	
@@ -74,6 +72,6 @@ console.log('this is apossible tag:', possibleSearch);
 		console.log('Produkten hittades inte');
 		return
 	}
-	res.send(matches)
+	res.send(possibleHats)
 })
 export default router
